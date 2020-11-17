@@ -53,12 +53,13 @@ volatile uint8_t timer0ReloadVal;
 
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
+    timer0ReloadVal= 217;
     uint8_t t=0;
     // interrupt handler
     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
     {
         t++;
-        if(t==20){
+        if(t==500){
         TMR0_ISR();}
         else{
             INTCONbits.TMR0IF = 0;
