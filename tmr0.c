@@ -109,12 +109,11 @@ void TMR0_ISR(void)
 {
 
     if(c==1){
-    PORTB=0xff;
-    c=0;
-    }else{
+        PORTB=0xff;
+        c=0;}
+    else{
         PORTB=0x00;
-        c=1;
-    }
+        c=1;}
     
     // Clear the TMR0 interrupt flag
     INTCONbits.TMR0IF = 0;

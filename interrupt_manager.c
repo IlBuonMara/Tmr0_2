@@ -60,6 +60,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         t++;
         if(t==500){
+            t==0;
         TMR0_ISR();}
         else{
             INTCONbits.TMR0IF = 0;
